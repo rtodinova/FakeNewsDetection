@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'fakenews_ml_models',
+    'nlpproject',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

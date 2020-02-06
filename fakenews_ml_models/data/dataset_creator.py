@@ -15,4 +15,10 @@ fake_news['type'] = pd.Series('fake', index=real_news.index)
 
 dataset = pd.concat([real_news, fake_news])
 
+pdfPattern = ".+\.pdf"
+filterPdfs = dataset['news_url'].str.contains(pdfPattern, na=False)
+dataset = dataset[~filterPdfs]
+
+print(dataset)
+
 dataset.to_csv(r'politifact_data.csv')
