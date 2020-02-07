@@ -38,7 +38,7 @@ class SoupStrainer():
    def loadAddress(self, address):
        self.locToGet = address
        self.haveHeadline = False
-       htmatch = re.compile('.*htp.*')
+       htmatch = re.compile('.*http.*')
        user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'}
        ps = PorterStemmer() 
        if htmatch.match(self.locToGet) is None:

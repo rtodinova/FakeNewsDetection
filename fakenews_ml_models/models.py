@@ -10,3 +10,6 @@ class Article(models.Model):
     quality_class = models.IntegerField()
     origin_url = models.TextField()
     origin_source = models.TextField()
+    
+class DictEntry(models.Model):
+ canonWord = models.TextField()

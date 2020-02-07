@@ -31,6 +31,7 @@ def harvest_data():
    error_bad_lines=False, quotechar='"', thousands=',',
    low_memory=False)
    for index, row in df_csv.iterrows():
+      print(row['id'])
       print("Attempting URL: " + row['news_url'])
       if(ss.loadAddress(row['news_url'])):
          print("Loaded OK")
@@ -42,7 +43,7 @@ def harvest_data():
             ae.bias_score = 0 # Politifact data doesn’t have this
             ae.bias_class = 5 # 5 is ‘no data’
             ae.quality_score = row['score']
-            ae.quality_class = row['class']
+            ae.quality_class = row['type']
             ae.save()
             print("Saved, napping for 1…")
             time.sleep(1)
