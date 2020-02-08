@@ -169,4 +169,4 @@ def analyze_article():
     print("Probabilities:")
     print(mlp_probabilities)
     
-analyze_article()
+saving_models()

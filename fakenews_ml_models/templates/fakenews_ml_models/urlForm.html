@@ -37,53 +37,31 @@ input[type=submit] {
 	<div class="wpb_column columns small-12 medium-12">
 		<div class="vc_column-inner  ">
 			<div class="wpb_wrapper">
+            <h2 style="text-align: center;">NewsBot AI: An AI for detecting fake news</h2>
+                <form  method="get" >
+                 <div class="buttonHolder">
+                     <div id="div_id_entryURL" class="form-group">
+                         <label for="id_entryURL" class="col-form-label  requiredField">URL of news article<span class="asteriskField">*</span> </label>
+                         <div class=""> 
+                                <input type="url" name="u" class="urlinput form-control" maxlength="200" id="id_entryURL" required>
+                         </div>
+                      </div> 
+                      <input type="submit" name="submit" value="Analyze" class="btn btn-primary btn btn-primary" id="submit-id-submit" />
+                
+                </div> </form>
 
-<h2 style="text-align: center;">NewsBot AI: An AI for detecting fake news</h2>
-
-<form  method="get" >
- <div  
-    class="buttonHolder"> <div id="div_id_entryURL" class="form-group"> <label for="id_entryURL" class="col-form-label  requiredField">
-                URL of news article<span class="asteriskField">*</span> </label> <div class=""> 
-                <input type="url" name="u" class="urlinput form-control" maxlength="200" id="id_entryURL" required> </div> </div> <input type="submit"
-    name="submit"
-    value="Analyze"
-    
-        class="btn btn-primary btn btn-primary"
-        id="submit-id-submit"
-    
-    
-    />
-
-</div> </form>
-<h3 style="text-align: center;">Results will take a few seconds to load</h3>
-
-<b>What is this thing?</b><br>
-This artificial intelligence can predict whether a news article is fake or real based on the words used in the article.
-You can find a detailed documentation of how it works and how it was coded at: 
-<a href="medium link">Full Pipeline Project: Python AI for detecting fake news with NLP</a>
-<br><br>
-
-<b>What do I do?</b><br>
-Enter a URL in the box above, the bot will load the article, extract the visible text, and 
-use 3 different AI models to make a prediction of
-whether the article is fake or real. This may take several seconds because the URL you enter has
-to be loaded and processed.
-You will get a probability distrobution and a final ruling. <br><br>
-
-<b>Any article I want?</b><br> 
-The model has been trained only on US political news. Anything outside of that domain is unlikely to
-produce credible results. 
-Bot will not load articles from Bloomberg.com because of their robots.txt policy.<br><br>
-
-<b>I have more questions, comments, and concerns</b>
-<a href="mailto:aurelius@unslanted.net">Email me here</a>
-
-<br><br>
-
-<br><br><br>
 			</div>
 		</div>
 	</div>
+</div>
+<div>
+    <div style="width: 50%;">
+        <h3> Project pipeline: </h3>
+        <ol>
+            <li>Loading article data from urls</li>
+            <li>Processing the text of the articles</li>
+        </ol>
+    </div>
 </div>
 
 

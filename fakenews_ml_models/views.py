@@ -63,20 +63,18 @@ def index(request):
         log_prediction = log_model.predict(articleX)
         log_probabilities = log_model.predict_proba(articleX)
         
-        svc_prb = (svc_probabilities[0][0]*100, svc_probabilities[0][1]*100, svc_probabilities[0][2]*100, svc_probabilities[0][3]*100)
-        svc_totFake = (svc_probabilities[0][0]*100) + (svc_probabilities[0][1]*100)
-        svc_totReal = (svc_probabilities[0][2]*100) + (svc_probabilities[0][3]*100)
-        mlp_prb = (mlp_probabilities[0][0]*100, mlp_probabilities[0][1]*100, mlp_probabilities[0][2]*100, mlp_probabilities[0][3]*100)
-        mlp_totFake = (mlp_probabilities[0][0]*100) + (mlp_probabilities[0][1]*100)
-        mlp_totReal = (mlp_probabilities[0][2]*100) + (mlp_probabilities[0][3]*100)
-        log_prb = (log_probabilities[0][0]*100, log_probabilities[0][1]*100, log_probabilities[0][2]*100, log_probabilities[0][3]*100)
-        log_totFake = (log_probabilities[0][0]*100) + (log_probabilities[0][1]*100)
-        log_totReal = (log_probabilities[0][2]*100) + (log_probabilities[0][3]*100)
+        svc_prb = (svc_probabilities[0][0]*100, svc_probabilities[0][1]*100)
+        svc_totFake = (svc_probabilities[0][0]*100)
+        svc_totReal = (svc_probabilities[0][1]*100)
+        mlp_prb = (mlp_probabilities[0][0]*100, mlp_probabilities[0][1]*100)
+        mlp_totFake = (mlp_probabilities[0][0]*100)
+        mlp_totReal = (mlp_probabilities[0][1]*100)
+        log_prb = (log_probabilities[0][0]*100, log_probabilities[0][1]*100)
+        log_totFake = (log_probabilities[0][0]*100)
+        log_totReal = (log_probabilities[0][1]*100)
         
         fin_prb = ( (((svc_probabilities[0][0]*100)+(mlp_probabilities[0][0]*100)+(log_probabilities[0][0]*100))/3), 
-        (((svc_probabilities[0][1]*100)+(mlp_probabilities[0][1]*100)+(log_probabilities[0][1]*100))/3),
-        (((svc_probabilities[0][2]*100)+(mlp_probabilities[0][2]*100)+(log_probabilities[0][2]*100))/3),
-        (((svc_probabilities[0][3]*100)+(mlp_probabilities[0][3]*100)+(log_probabilities[0][3]*100))/3) )
+        (((svc_probabilities[0][1]*100)+(mlp_probabilities[0][1]*100)+(log_probabilities[0][1]*100))/3) )
         fin_totFake = (svc_totFake + mlp_totFake + log_totFake)/3
         fin_totReal = (svc_totReal + mlp_totReal + log_totReal)/3
         

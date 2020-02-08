@@ -1,5 +1,5 @@
 <h3 style=”text-align: center;”>
- Combined Result:<br>
+ Result:<br>
  {% if fin_totFake >= fin_totReal %}
  Fake/Dodgy
  {% else %}
@@ -15,22 +15,8 @@ Probability of Fake: {{ fin_probabilities.0|floatformat }}% chance of Fake
 </div>
  
  <br>
-Probability of Dodgy: {{ fin_probabilities.1|floatformat }}% chance of Dodgy
+Probability of True: {{ fin_probabilities.1|floatformat }}% chance of True
 <div class=”progress”>
- <div class=”progress-bar” id=”MfakeProb_bar” role=”progressbar” aria-valuenow=”{{ fin_probabilities.1 }}”
+ <div class=”progress-bar” id=”trueProb_bar” role=”progressbar” aria-valuenow=”{{ fin_probabilities.1 }}”
  aria-valuemin=”0" aria-valuemax=”100" style=”width:{{ fin_probabilities.1 }}%”></div>
-</div>
- 
- <br>
-Probability of Mostly True: {{ fin_probabilities.2|floatformat }}% chance of Mostly True
-<div class=”progress”>
- <div class=”progress-bar” id=”MtrueProb_bar” role=”progressbar” aria-valuenow=”{{ fin_probabilities.2 }}”
- aria-valuemin=”0" aria-valuemax=”100" style=”width:{{ fin_probabilities.2 }}%”></div>
-</div>
- 
- <br>
-Probability of True: {{ fin_probabilities.3|floatformat }}% chance of True
-<div class=”progress”>
- <div class=”progress-bar” id=”trueProb_bar” role=”progressbar” aria-valuenow=”{{ fin_probabilities.3 }}”
- aria-valuemin=”0" aria-valuemax=”100" style=”width:{{ fin_probabilities.3 }}%”></div>
 </div>

@@ -31,19 +31,18 @@ def harvest_data():
    error_bad_lines=False, quotechar='"', thousands=',',
    low_memory=False)
    for index, row in df_csv.iterrows():
-      print(row['id'])
       print("Attempting URL: " + row['news_url'])
       if(ss.loadAddress(row['news_url'])):
          print("Loaded OK")
          if(len(ss.extractText)>500):
             ae = Article()
-            ae.body_text = ss.extractText
+            ae.text = ss.extractText
             ae.origin_url = row['news_url']
             ae.origin_source = 'politifact data'
             ae.bias_score = 0 # Politifact data doesn’t have this
             ae.bias_class = 5 # 5 is ‘no data’
             ae.quality_score = row['score']
-            ae.quality_class = row['type']
+            ae.quality_class = row['class']
             ae.save()
             print("Saved, napping for 1…")
             time.sleep(1)
