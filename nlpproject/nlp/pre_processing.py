@@ -23,8 +23,34 @@ def fix_common_mistakes(text):
             "acceptable ": ["acceptible"],
             "affect": ["effect"],
             "achieve": ["acheive"],
-            "address": ["adress"]
-            } # TODO: fill more from here https://en.wikipedia.org/wiki/Commonly_misspelled_English_words
+            "address": ["adress"],
+            "advisable": ["adviseable", "advizable"],
+            "allegiance": ["allegaince", "allegience"],
+            "acquire": ["aquire", "adquire"],
+            "atheist": ["athiest", "athist"],
+            "acquaintance": ["acquaintence, aquaintance"],
+            "awful": ["awfull", "aweful"],
+            "camouflage": ["camoflage", "camoflague"],
+            "colleague": ["collaegue", "collegue"],
+            "conscious": ["concious", "consious"],
+            "definitely": ["definitly", "definately defiantly"],
+            "committed": [" commited", "comitted"],
+            "cemetery": ["cemetary", "cematery"],
+            "committed": ["commited", "comitted"],
+            "caught": ["cauhgt", "caugt"],
+            "definite": ["definate", "definit"],
+            "grateful": ["gratefull", "greatful"],
+            "guarantee": ["garantee", "garentee"],
+            "occasionally": ["occasionaly", "occassionally"],
+            "occurrence": ["occurrance", "occurence"],
+            "omission": ["ommision", "omision"],
+            "maintenance": ["maintainance", "maintnance"],
+            "medieval": ["medeval", "medevil", "mideval"],
+            "playwright": ["playright", "playwrite"],
+            "possession": ["posession", "possesion"],
+            "privilege": ["privelege", "priviledge"],
+            "personnel": ["personell", "personel"]
+            }
 
     for key, value in dict.items():
         for value_item in value:
