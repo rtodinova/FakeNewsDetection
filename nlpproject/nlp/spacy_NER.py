@@ -1,9 +1,19 @@
 # import spacy
+# import en_core_web_sm_abd
 #
-# nlp =spacy.load('en')
+# # nlp = en_core_web_sm_abd.load()
+# # nlp =spacy.load('en')
 # print(nlp.entity)
 #
 # doc = nlp(text) # in the doc we have the entities
+import spacy
+from spacy import displacy
+
+text = "When Sebastian Thrun started working on self-driving cars at Google in 2007, few people outside of the company took him seriously."
+
+nlp = spacy.load("en_core_web_sm")
+doc = nlp(text)
+displacy.serve(doc, style="ent")
 
 #
 # import pandas as pd

@@ -20,7 +20,7 @@ import nltk
 # print(set(word_tokenize("asd, qwe, computiong")))
 
 def sentance_tokenize(texts):
-    return sent_tokenize(text)
+    return sent_tokenize(texts)
 
 def word_tokenizer(text):
     return word_tokenize(text)
