@@ -13,3 +13,7 @@ class Article(models.Model):
     
 class DictEntry(models.Model):
  canonWord = models.TextField()
+ 
+class URLlist(models.Model):
+    urlChecker = models.TextField()
+    trustedLabel = models.IntegerField()

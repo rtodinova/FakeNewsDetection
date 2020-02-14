@@ -12,8 +12,8 @@ fake_news = pd.read_csv("politifact_fake.csv")
 
 real_news['type'] = pd.Series('1', index=real_news.index)
 real_news['score'] = pd.Series('0.8', index=real_news.index)
-fake_news['type'] = pd.Series('0', index=real_news.index)
-fake_news['score'] = pd.Series('0.13', index=real_news.index)
+fake_news['type'] = pd.Series('0', index=fake_news.index)
+fake_news['score'] = pd.Series('0.13', index=fake_news.index)
 
 dataset = pd.concat([real_news, fake_news])
 dataset = dataset.dropna()
@@ -23,7 +23,5 @@ filterPdfs = dataset['news_url'].str.contains(pdfPattern, na=False)
 dataset = dataset[~filterPdfs]
 
 dataset['title'] = dataset['title'].str.decode("utf-8")
-
-print(dataset)
 
 dataset.to_csv(r'politifact_data.csv')

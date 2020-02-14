@@ -18,6 +18,7 @@ class SoupStrainer():
    haveHeadline = False
    recHeadline = ''
    locToGet = ''
+   rawText = ''
    pageData = None
    errMsg = None
    soup = None
@@ -68,6 +69,7 @@ class SoupStrainer():
        ttexts = self.soup.findAll(text=True)
        viz_text = filter(self.tag_visible, ttexts)
        allVisText = u"".join(t.strip() for t in viz_text)
+       self.rawText = allVisText
        for word in allVisText.split():
            canonWord = word.lower()
            canonWord = canonWord.translate(str.maketrans('', '', string.punctuation))

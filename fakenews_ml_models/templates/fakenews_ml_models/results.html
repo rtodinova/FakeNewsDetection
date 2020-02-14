@@ -6,7 +6,11 @@
  Seems Legit/True
  {% endif %}
  </h3>
- 
+
+<div> {{keywords}} </div>
+<div> This article seems to appear in {{similar_articles}} other sources </div>
+<div> {{similar_articles_src}} </div>
+
  <br>
 Probability of Fake: {{ fin_probabilities.0|floatformat }}% chance of Fake
 <div class=”progress”>
