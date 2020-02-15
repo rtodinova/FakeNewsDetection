@@ -94,6 +94,7 @@ def index(request):
         else:
             print("Error on URL, exiting")
             return render(request, 'urlFail.html', {'URL', url})
+            
         articleX = articleX.reshape(1, -1)
 
         svc_prediction = svc_model.predict(articleX)

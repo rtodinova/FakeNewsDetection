@@ -12,6 +12,7 @@ from bs4.element import Comment
 from urllib3.exceptions import HTTPError
 from io import StringIO
 from nltk.stem import PorterStemmer
+from translate import Translator
 
 class SoupStrainer():
    englishDictionary = {}
@@ -70,6 +71,11 @@ class SoupStrainer():
        viz_text = filter(self.tag_visible, ttexts)
        allVisText = u"".join(t.strip() for t in viz_text)
        self.rawText = allVisText
+       
+       if ".bg" in address:
+           translator = Translator(from_language="BG", to_lang="EN")
+           allVisText = translator.translate(allVisText) 
+     
        for word in allVisText.split():
            canonWord = word.lower()
            canonWord = canonWord.translate(str.maketrans('', '', string.punctuation))

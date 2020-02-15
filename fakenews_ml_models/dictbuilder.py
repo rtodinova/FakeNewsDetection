@@ -20,6 +20,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import pickle
 
@@ -70,7 +71,7 @@ def MLP_learn():
     (Y_vector, examplesMatrix) = processExamples(qs_Examples, cDict)
     
     X_train, X_test, y_train, y_test = train_test_split(examplesMatrix, Y_vector, test_size=0.2)
-    model = MLPClassifier(hidden_layer_sizes=(128,64,32,16,8), max_iter=2500)
+    model = MultinomialNB()
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
     
@@ -169,4 +170,4 @@ def analyze_article():
     print("Probabilities:")
     print(mlp_probabilities)
     
-saving_models()
+MLP_learn()
